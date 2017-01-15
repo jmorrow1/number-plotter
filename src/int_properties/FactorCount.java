@@ -1,6 +1,6 @@
 package int_properties;
 
-public class NumFactors implements IntProperty {
+public class FactorCount implements IntProperty {
 
     @Override
     public int evaluate(long x) {

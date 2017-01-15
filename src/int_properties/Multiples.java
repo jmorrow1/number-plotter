@@ -2,10 +2,10 @@ package int_properties;
 
 import java.util.function.IntPredicate;
 
-public class IsDivisbleBy implements IntSequence {
+public class Multiples implements IntSequence {
     private int divisor;
 
-    public IsDivisbleBy(int divisor) {
+    public Multiples(int divisor) {
         this.divisor = Math.max(1, divisor);
     }
 

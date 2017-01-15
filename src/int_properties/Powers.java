@@ -1,10 +1,10 @@
 package int_properties;
 
-public class IsPower implements IntSequence {
+public class Powers implements IntSequence {
     private int exponent;
     private double inverseOfExponent;
 
-    public IsPower(int exponent) {
+    public Powers(int exponent) {
         setExponent(exponent);
     }
 

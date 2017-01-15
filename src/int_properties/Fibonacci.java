@@ -2,11 +2,11 @@ package int_properties;
 
 import java.math.BigInteger;
 
-public class IsFibonacci implements IntSequence {
+public class Fibonacci implements IntSequence {
     private int n;
     private long a, b;
 
-    public IsFibonacci() {
+    public Fibonacci() {
         this.n = 1;
         this.a = 0;
         this.b = 1;
@@ -48,7 +48,7 @@ public class IsFibonacci implements IntSequence {
     }
 
     public static void main(String[] args) {
-        IsFibonacci fib = new IsFibonacci();
+        Fibonacci fib = new Fibonacci();
         for (int i = 0; i < 100; i++) {
             System.out.println(fib.nth(i));
         }

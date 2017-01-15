@@ -1,10 +1,10 @@
 package int_properties;
 
-public class IsInteger implements IntSequence {
+public class Integers implements IntSequence {
 
-    public final static IsInteger instance = new IsInteger();
+    public final static Integers instance = new Integers();
 
-    private IsInteger() {
+    private Integers() {
     }
 
     @Override

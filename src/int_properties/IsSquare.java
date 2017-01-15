@@ -15,8 +15,9 @@ public class IsSquare implements IntSequence {
 
     @Override
     public int evaluate(long value) {
-        if (value < 1)
+        if (value < 1) {
             return 0;
+        }
         int root = (int) Math.sqrt(value);
         return value == root * root ? 1 : 0;
     }
