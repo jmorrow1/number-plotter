@@ -1,9 +1,9 @@
 package curves;
 
-import int_properties.IsSquare;
+import int_properties.IsPower;
 
 public class SacksSpiral implements Curve {
-    private IsSquare isSquare = IsSquare.instance;
+    private IsPower isSquare = IsPower.instance;
 
     @Override
     public void enumerate(int end, Point[] mem, int memStartIndex) {

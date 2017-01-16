@@ -15,8 +15,9 @@ public class Powers implements IntSequence {
 
     @Override
     public int evaluate(long value) {
-        if (value < 1)
+        if (value < 1) {
             return 0;
+        }       
         int root = (int) Math.round(Math.pow(value, inverseOfExponent));
         return value == (int) Math.pow(root, exponent) ? 1 : 0;
     }
