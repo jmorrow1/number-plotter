@@ -73,7 +73,7 @@ public class UlamSpiral implements Curve {
 
         @Override
         public void start() {
-            n = 1;
+            index = 0;
             x = 0;
             y = 0;
             margin = 1;
@@ -86,29 +86,27 @@ public class UlamSpiral implements Curve {
             pt.x = x;
             pt.y = y;
 
-            if (n > 1) {
-                // change direction, if needed
-                boolean changeDirection = (direction == UlamSpiral.RIGHT && x == margin) || (direction == UlamSpiral.LEFT && x == -margin)
-                        || (direction == UlamSpiral.DOWN && y == margin) || (direction == UP && y == -margin);
+            // change direction, if needed
+            boolean changeDirection = (direction == UlamSpiral.RIGHT && x == margin) || (direction == UlamSpiral.LEFT && x == -margin)
+                    || (direction == UlamSpiral.DOWN && y == margin) || (direction == UP && y == -margin);
 
-                if (changeDirection) {
-                    if (direction != UlamSpiral.RIGHT) {
-                        direction++;
-                        if (direction == UlamSpiral.RIGHT) {
-                            margin++;
-                        }
-                    } else {
-                        direction = UlamSpiral.UP;
+            if (changeDirection) {
+                if (direction != UlamSpiral.RIGHT) {
+                    direction++;
+                    if (direction == UlamSpiral.RIGHT) {
+                        margin++;
                     }
+                } else {
+                    direction = UlamSpiral.UP;
                 }
-
-                // advance position
-                x += (direction == UlamSpiral.LEFT) ? -1 : (direction == UlamSpiral.RIGHT) ? 1 : 0;
-                y += (direction == UlamSpiral.UP) ? -1 : (direction == UlamSpiral.DOWN) ? 1 : 0;
-
-                // increment index
-                n++;
             }
+
+            // advance position
+            x += (direction == UlamSpiral.LEFT) ? -1 : (direction == UlamSpiral.RIGHT) ? 1 : 0;
+            y += (direction == UlamSpiral.UP) ? -1 : (direction == UlamSpiral.DOWN) ? 1 : 0;
+
+            // increment index
+            index++;
         }       
     }
     

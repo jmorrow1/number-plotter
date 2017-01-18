@@ -59,7 +59,7 @@ public class SacksSpiral implements Curve {
             radius = 1;
             theta = 0;
             dTheta = 2 * Math.PI;
-            n = 1;
+            index = 0;
         }
 
         @Override
@@ -69,17 +69,17 @@ public class SacksSpiral implements Curve {
             pt.y = (float) (radius * Math.sin(theta));
 
             // adjust properties of next position
-            boolean squareNumber = curve.isSquare.evaluate(n) == 1;
+            boolean squareNumber = curve.isSquare.evaluate(index+1) == 1;
             if (squareNumber) {
                 radius++;
-                dTheta = (2 * Math.PI) / n;
+                dTheta = (2 * Math.PI) / (index+1);
                 theta = 0;
             } else {
                 theta += dTheta;
             }
 
             // increment index
-            n++;
+            index++;
         }     
     }
     

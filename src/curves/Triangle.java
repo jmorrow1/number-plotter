@@ -1,5 +1,7 @@
 package curves;
 
+import int_properties.IntSequence;
+
 public class Triangle implements Curve {
     private int dRowWidth;
 
@@ -57,7 +59,7 @@ public class Triangle implements Curve {
         }
         
         public void start() {
-            n = 0;
+            index = 0;
             x = 0;
             y = 0;
             rowWidth = 1;
@@ -66,8 +68,7 @@ public class Triangle implements Curve {
         public void step(Point pt) {
             // save position to memory   
             pt.x = -rowWidth / 2 + x;
-            pt.y = y;
-            
+            pt.y = y;        
             
             // advance position
             if (x == rowWidth) {
@@ -79,7 +80,7 @@ public class Triangle implements Curve {
             }
     
             // increment index
-            n++;
+            index++;
         }
     }
 

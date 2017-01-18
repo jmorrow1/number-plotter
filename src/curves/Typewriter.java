@@ -57,7 +57,7 @@ public class Typewriter implements Curve {
         public void start() {
             x = 0;
             y = 0;
-            n = 1;
+            index = 0;
         }
 
         @Override
@@ -75,7 +75,7 @@ public class Typewriter implements Curve {
             }
 
             // increment index
-            n++;
+            index++;
         }
         
     }

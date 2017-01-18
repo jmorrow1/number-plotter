@@ -126,7 +126,7 @@ public class Diamond implements Curve {
             y = 0;
             rowWidth = 1;
             incrementingRowWidth = true;
-            n = 1;
+            index = 0;
         }
         
         public void step(Point pt) {
@@ -160,7 +160,7 @@ public class Diamond implements Curve {
             }
 
             // increment index
-            n++;
+            index++;
         }
     }
 

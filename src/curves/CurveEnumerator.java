@@ -1,8 +1,11 @@
 package curves;
 
+import int_properties.IntSequence;
+
 public abstract class CurveEnumerator<T extends Curve> {
     protected T curve;
-    protected int n;
+    protected int index;
+    protected IntSequence sequence;
     
     public CurveEnumerator(T curve) {
         this.curve = curve;
@@ -17,7 +20,7 @@ public abstract class CurveEnumerator<T extends Curve> {
         return pt;
     }
     
-    public int getN() {
-        return n;
+    public int getIndex() {
+        return index;
     }
 }
