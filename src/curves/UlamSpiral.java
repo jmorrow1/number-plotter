@@ -1,7 +1,7 @@
 package curves;
 
 public class UlamSpiral implements Curve {
-    private final int UP = 0, LEFT = 1, DOWN = 2, RIGHT = 3;
+    private final static int UP = 0, LEFT = 1, DOWN = 2, RIGHT = 3;
 
     public UlamSpiral() {
     }
@@ -62,5 +62,58 @@ public class UlamSpiral implements Curve {
             i++;
             n++;
         }
+    }
+    
+    private static class UlamSpiralEnumerator extends CurveEnumerator<UlamSpiral> {
+        private int n, x, y, margin, direction;
+
+        public UlamSpiralEnumerator(UlamSpiral curve) {
+            super(curve);
+        }
+
+        @Override
+        public void start() {
+            n = 1;
+            x = 0;
+            y = 0;
+            margin = 1;
+            direction = UP;
+        }
+
+        @Override
+        public void step(Point pt) {
+            // save position to memory
+            pt.x = x;
+            pt.y = y;
+
+            if (n > 1) {
+                // change direction, if needed
+                boolean changeDirection = (direction == UlamSpiral.RIGHT && x == margin) || (direction == UlamSpiral.LEFT && x == -margin)
+                        || (direction == UlamSpiral.DOWN && y == margin) || (direction == UP && y == -margin);
+
+                if (changeDirection) {
+                    if (direction != UlamSpiral.RIGHT) {
+                        direction++;
+                        if (direction == UlamSpiral.RIGHT) {
+                            margin++;
+                        }
+                    } else {
+                        direction = UlamSpiral.UP;
+                    }
+                }
+
+                // advance position
+                x += (direction == UlamSpiral.LEFT) ? -1 : (direction == UlamSpiral.RIGHT) ? 1 : 0;
+                y += (direction == UlamSpiral.UP) ? -1 : (direction == UlamSpiral.DOWN) ? 1 : 0;
+
+                // increment index
+                n++;
+            }
+        }       
+    }
+    
+    @Override
+    public CurveEnumerator<UlamSpiral> enumerator() {
+        return new UlamSpiralEnumerator(this);
     }
 }

@@ -12,4 +12,5 @@ public interface Curve {
     }
 
     public void enumerate(int end, Point[] mem, int memStartIndex);
+    public CurveEnumerator enumerator();
 }
