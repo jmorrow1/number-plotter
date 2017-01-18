@@ -48,7 +48,6 @@ public class Typewriter implements Curve {
     
     private static class TypewriterEnumerator extends CurveEnumerator<Typewriter> {
         private int x, y;
-        private int n;
         
         private TypewriterEnumerator(Typewriter curve) {
             super(curve);

@@ -113,7 +113,6 @@ public class Diamond implements Curve {
     
     private static class DiamondEnumerator extends CurveEnumerator<Diamond> {
         private int x, y;
-        private int n;
         private int rowWidth;
         private boolean incrementingRowWidth;
         

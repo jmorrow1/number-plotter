@@ -65,7 +65,7 @@ public class UlamSpiral implements Curve {
     }
     
     private static class UlamSpiralEnumerator extends CurveEnumerator<UlamSpiral> {
-        private int n, x, y, margin, direction;
+        private int x, y, margin, direction;
 
         public UlamSpiralEnumerator(UlamSpiral curve) {
             super(curve);

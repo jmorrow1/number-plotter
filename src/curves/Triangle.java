@@ -48,7 +48,6 @@ public class Triangle implements Curve {
     }
     
     private static class TriangleEnumerator extends CurveEnumerator<Triangle> {
-        private int n;
         private int x, y;
         private int rowWidth;
         

@@ -2,6 +2,7 @@ package curves;
 
 public abstract class CurveEnumerator<T extends Curve> {
     protected T curve;
+    protected int n;
     
     public CurveEnumerator(T curve) {
         this.curve = curve;
@@ -14,5 +15,9 @@ public abstract class CurveEnumerator<T extends Curve> {
         Point pt = new Point(0, 0);
         step(pt);
         return pt;
+    }
+    
+    public int getN() {
+        return n;
     }
 }

@@ -49,7 +49,6 @@ public class SacksSpiral implements Curve {
     private static class SacksSpiralEnumerator extends CurveEnumerator<SacksSpiral> {
         private int radius;
         private double theta, dTheta;
-        private int n;
         
         private SacksSpiralEnumerator(SacksSpiral curve) {
             super(curve);
