@@ -18,6 +18,7 @@ public class SacksSpiral implements Curve {
         int radius = 1;
         double theta = 0;
         double dTheta = 2 * Math.PI;
+        int prevSquareNumber = 0;
 
         int i = memStartIndex;
         int n = 1;
@@ -33,9 +34,11 @@ public class SacksSpiral implements Curve {
             // adjust properties of next position
             boolean squareNumber = isSquare.evaluate(n) == 1;
             if (squareNumber) {
+                int currSquareNumber = n;
                 radius++;
-                dTheta = (2 * Math.PI) / n;
+                dTheta = (2 * Math.PI) / (currSquareNumber - prevSquareNumber);
                 theta = 0;
+                prevSquareNumber = currSquareNumber;
             } else {
                 theta += dTheta;
             }
